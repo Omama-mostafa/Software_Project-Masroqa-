@@ -2,7 +2,7 @@
 package masroqa;
 
 import java.io.BufferedReader;
-import java.io.File;
+import java.io.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,9 +35,17 @@ public class Post_Database {
             det_arr.add(obj);
         }
         return det_arr;
-    }
-  public void save_data(Post p)
-  {}
+    } 
+public void save_data(String s) throws IOException {
+        File file = new File("Post.txt");
+        BufferedWriter bw = new BufferedWriter(new FileWriter("Post.txt"));
+        bw.write("Discraption" + "\t" + "CategoryName" + "\t" + "itemQuestion" + "\t" + "Answer");
+         bw.newLine();
+         bw.newLine();
+        bw.write(s);
+        bw.close();
+
+}
   public void update_data(Post p) 
   {}
   public void delete_data(Post p)
