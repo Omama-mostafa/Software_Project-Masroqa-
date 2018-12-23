@@ -8,10 +8,10 @@ public class ItemQuestionForm {
      private String Question;
   private String Answer ;
   
-  Check_Answer check_Answer = new Check_Answer();
+  //Check_Answer check_Answer = new Check_Answer();
   
-  User user = new User();
-  Post p = new Post();
+  //User user = new User();
+  //Post p = new Post();
   
   
    public void set_Question(String n)

@@ -6,7 +6,7 @@ public class Check_Answer {
     private String OriginalAnswer;
 	private String Answer;
         
-        ItemQuestionForm itemQuestionForm = new ItemQuestionForm();
+       // ItemQuestionForm itemQuestionForm = new ItemQuestionForm();
         FormAnswer formAnswer = new FormAnswer();
 	Communication communication = new Communication();
         Post_Database post_Database = new Post_Database();

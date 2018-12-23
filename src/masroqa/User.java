@@ -1,15 +1,14 @@
-
 package masroqa;
 
 import java.util.ArrayList;
 
 public class User {
      private String name;
-    private String passward ;
+    private String password ;
     private String username;
     private String email;
     
-    User_Form User_Form = new User_Form();
+    //User_Form User_Form = new User_Form();
     public ArrayList<Post> Users = new ArrayList<>();
    public ArrayList<User_Services> User_Services = new ArrayList<>();
   ItemQuestionForm ItemQuestionForm = new ItemQuestionForm();
@@ -20,7 +19,7 @@ public class User {
       public void set_name(String n)
     {name = n;}
    public void set_passward(String n)
-    {passward = n;}
+    {password = n;}
          
      public void set_email(String n)
     {email = n;}
@@ -32,7 +31,7 @@ public class User {
      {return username;}
       
      public String get_passward()
-     {return passward;}
+     {return password;}
      
       public String get_email()
      {return email;}

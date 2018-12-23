@@ -7,13 +7,74 @@ import java.util.Scanner;
 
 
 public class User_Form {
+    
+    private ArrayList<User> Users = new ArrayList<>();
+    private User_Database DB =new User_Database ();
+    
     ArrayList<User_Post> User_Post = new ArrayList<>();
     Post_Services Post_Services = new Post_Services();
     ArrayList<User_Services> user_Services = new ArrayList<>();
     
     
-     public void Login()
-    {}
+    public boolean Login () throws IOException
+    {
+        String name="";
+        String password="";
+        Scanner s = new Scanner(System.in);
+        System.out.println("User Name : ");
+        name=s.next();
+        
+        System.out.println("Password : ");
+        password=s.next();
+        User_Database udb = new User_Database();
+        ArrayList<User_Database.details> arr = udb.get_data();
+        boolean found = false;
+        for(int i=0; i<arr.size(); i++)
+        {
+            if(name.equals(arr.get(i).name) && password.equals(arr.get(i).password))
+            {
+                found = true;
+            }
+        }
+        return found;
+    }
+    
+    public boolean Registration () throws IOException
+    {
+        String name="";
+        String password="";
+        String email="";
+        
+        Scanner s = new Scanner(System.in);
+        System.out.print("User Name : ");
+        name=s.next();
+        
+        System.out.print("Password : ");
+        password=s.next();
+        
+        System.out.print("Email : ");
+        email=s.next();
+        User_Database u_db = new User_Database();
+        if(u_db.save_data(name , password , email))
+            return true;
+        else
+            return false;
+    }
+    
+    
+    public void SignUp () throws IOException
+    {
+        if (Registration())
+        {
+            System.out.println ("Successfully!");
+        }
+        else
+        {
+            System.out.println("Something Wrong happened");
+        }
+    }
+    
+    
     public void PostItem()
     {}
     
@@ -44,5 +105,4 @@ public class User_Form {
     {}
     public void delete_post(String Post)
     {}
-    
 }
