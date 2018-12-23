@@ -14,17 +14,17 @@ public class User_Form {
     ArrayList<User_Post> User_Post = new ArrayList<>();
     Post_Services Post_Services = new Post_Services();
     ArrayList<User_Services> user_Services = new ArrayList<>();
-    
+    Post p = new Post();
     
     public boolean Login () throws IOException
     {
         String name="";
         String password="";
         Scanner s = new Scanner(System.in);
-        System.out.println("User Name : ");
+        System.out.print("User Name : ");
         name=s.next();
         
-        System.out.println("Password : ");
+        System.out.print("Password : ");
         password=s.next();
         User_Database udb = new User_Database();
         ArrayList<User_Database.details> arr = udb.get_data();
@@ -75,8 +75,31 @@ public class User_Form {
     }
     
     
-    public void PostItem()
-    {}
+    public void PostItem() throws IOException
+    {
+        String ss ="";
+        Scanner read = new Scanner(System.in);
+        ItemQuestionForm itemQuestion = new ItemQuestionForm();
+        System.out.println("Enter the post discription ");
+        p.set_ItemDescription(read.next());
+        //database.save_data(p.get_ItemDescription());
+
+        System.out.println("Enter the CategoryName ");
+        p.set_CategoryName(read.next());
+        //database.save_data(p.get_CategoryName());
+
+        System.out.println("Enter the itemQuestion ");
+        itemQuestion.set_Question(read.next());
+
+       // database.save_data(itemQuestion.get_Question());
+
+        System.out.println("Enter the Answer ");
+        itemQuestion.set_Answer(read.next());
+        //database.save_data(itemQuestion.get_Answer());
+        Post_Database obj = new Post_Database();
+       ss = p.get_ItemDescription()+"\t\t" + p.get_CategoryName()+ "\t\t" +itemQuestion.get_Question()+ "\t\t" +itemQuestion.get_Answer();
+        obj.save_data(ss);
+    }
     
     public void SearchItem() throws IOException
     {

@@ -43,7 +43,8 @@ public class Masroqa {
         number = read.nextInt();
         if(number == 1)
         {
-        
+             User_Form uf = new User_Form();
+            uf.PostItem();
         }
         if(number == 2)
         {

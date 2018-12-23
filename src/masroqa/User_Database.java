@@ -45,6 +45,8 @@ public class User_Database {
     }
     
     private User u = new User();
+    
+    
     static class details
     {
         String name;

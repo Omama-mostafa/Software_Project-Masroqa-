@@ -9,9 +9,6 @@ public class Post {
    private String CategoryName;
    
     ArrayList<User> user = new ArrayList<>();
-     ArrayList<Post_Services> post_Services = new ArrayList<>();
-   FormAnswer FormAnswer = new FormAnswer();
-   ItemQuestionForm ItemQuestionForm = new ItemQuestionForm();
    
    public void set_ItemDescription(String n)
     {ItemDescription = n;}
